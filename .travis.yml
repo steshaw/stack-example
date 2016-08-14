@@ -9,7 +9,7 @@ cache:
 addons:
   apt:
     packages:
-      gmp
+      libgmp10
 
 before_install:
   # Download and unpack the stack executable
