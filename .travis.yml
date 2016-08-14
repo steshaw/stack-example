@@ -11,6 +11,12 @@ addons:
     packages:
       libgmp10
 
+addons: 
+  apt: 
+    packages: 
+      - ghc-7.10.3
+    sources: hvr-ghc
+
 before_install:
   # Download and unpack the stack executable
   - mkdir -p ~/.local/bin
@@ -19,7 +25,6 @@ before_install:
         tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
 
 install:
-  - stack setup
   - stack --no-terminal --install-ghc test --only-dependencies
 
 script:
