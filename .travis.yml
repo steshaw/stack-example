@@ -6,8 +6,12 @@ cache:
   directories:
     - ~/.stack
 
+addons:
+  apt:
+    packages:
+      gmp
+
 before_install:
-  - apt-get install gmp
   # Download and unpack the stack executable
   - mkdir -p ~/.local/bin
   - export PATH=$HOME/.local/bin:$PATH
