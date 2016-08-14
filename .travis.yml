@@ -9,13 +9,7 @@ cache:
 addons:
   apt:
     packages:
-      libgmp10
-
-addons: 
-  apt: 
-    packages: 
-      - ghc-7.10.3
-    sources: hvr-ghc
+      - libgmp-dev
 
 before_install:
   # Download and unpack the stack executable
@@ -31,7 +25,7 @@ script:
   - stack --no-terminal test --haddock --no-haddock-deps
   - stack exec stack-example-exe
 
-post_script:
+after_script:
   - ls ~/.stack
   - ls ~/.ghc
   - ls ~/.cabal
