@@ -21,3 +21,8 @@ install:
 script:
   - stack --no-terminal test --haddock --no-haddock-deps
   - stack exec stack-example-exe
+
+post_script:
+  - ls ~/.stack
+  - ls ~/.ghc
+  - ls ~/.cabal
